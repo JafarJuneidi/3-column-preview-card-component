@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --first-card: hsl(31, 77%, 52%);
+    --second-card: hsl(184, 100%, 22%);
+    --third-card: hsl(179, 100%, 13%);
+
+    --transparent-white: hsla(0, 0%, 100%, 0.75); /* paragraphs*/
+    --very-light-gray: hsl(0, 0%, 95%); /* background, headings, buttons */
+
+    --primary-font: 'Big Shoulders Display', cursive;
+    --secondary-font: 'Lexend Deca', sans-serif;
+}
+
+/* BASE CSS */
+
+main {
+    font-family: var(--secondary-font);
+    height: 100vh;
+    max-width: 1440px;
+}
+
+h1 {
+    font-family: var(--primary-font);
+    color: var(--very-light-gray);
+    margin: 1em 0;
+}
+
+p {
+    color: var(--transparent-white);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 15px;
+}
+
+/* Utility */
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    flex-direction: row;
+    width: 70%;
+    height: 70%;
+    flex-wrap: wrap;
+}
+
+/* cards */
+.card {
+    padding: 2.5em;
+    height: 100%;
+    flex: 1 0 33%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container > *:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.container > *:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.container a {
+    display: block;
+    margin-top: 2em;
+    padding: 1em 2em;
+    background-color: var(--very-light-gray);
+    border-radius: 30px;
+    border: 3px solid #fff;
+}
+
+.container a:hover {
+    background-color: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+}
+
+.sedan {
+    background-color: var(--first-card);
+}
+
+.sedan a {
+    color: var(--first-card);
+}
+
+.suv {
+    background-color: var(--second-card);
+}
+
+.suv a {
+    color: var(--second-card);
+}
+
+.luxury {
+    background-color: var(--third-card);
+}
+
+.luxury a {
+    color: var(--third-card);
+}
+
+/* @media (max-width: 785px) {
+    main {
+        height: auto;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .card {
+        padding: 1em;
+    }
+
+    .container a {
+        padding: 0.5em 1em;
+        border-radius: 30px;
+        border: 3px solid #fff;
+    }
+} */
+
+@media (max-width: 375px) {
+    main {
+        height: auto;
+        margin: 5em 0;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .container > *:first-child {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .container > *:last-child {
+        border-radius: 0 0 10px 10px;
+    }
+}
